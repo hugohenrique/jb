@@ -1,0 +1,20 @@
+version: "3.4"
+services:
+  php:
+    build:
+      context: ./docker/php
+      target: jusbrasil_php
+    volumes:
+      - "./app:/srv/app"
+  nginx:
+    build:
+      context: ./docker/nginx
+      target: jusbrasil_nginx
+    tty: true
+    ports:
+      - "80:80"
+    depends_on:
+      - php
+    volumes:
+      - ./logs/nginx:/var/log/nginx
+      - ./app/public:/srv/app/public:ro
