@@ -4,7 +4,7 @@ namespace App\Service;
 use App\ProcessNumber;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class TjalSecondStepCrawler extends JusticeProcessCrawler
+class TjalSecondStepCrawler extends TjalCrawler
 {
     public function __construct(HttpClientInterface $httpClient)
     {

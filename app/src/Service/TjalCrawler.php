@@ -5,7 +5,7 @@ use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-abstract class JusticeProcessCrawler
+abstract class TjalCrawler
 {
     use ExtractMovementsFromJusticeProcess;
 
