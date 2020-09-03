@@ -4,7 +4,7 @@ COPY conf/php.ini   /usr/local/etc/php/conf.d/
 COPY conf/pool.conf /usr/local/etc/php/
 
 RUN apt-get update && \
-    apt-get install -y libzip-dev zlib1g-dev chromium curl git && \
+    apt-get install -y libzip-dev zlib1g-dev chromium curl git unzip && \
     docker-php-ext-install zip
 
 WORKDIR /srv/app
