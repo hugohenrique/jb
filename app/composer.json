@@ -17,10 +17,10 @@
         "symfony/yaml": "5.1.*"
     },
     "require-dev": {
-        "codeception/codeception": "^4.1",
-        "codeception/module-phpbrowser": "^1.0",
-        "codeception/module-rest": "^1.2",
-        "codeception/module-asserts": "^1.0.0"
+        "phpunit/phpunit": "^9.3",
+        "symfony/browser-kit": "^5.1",
+        "symfony/css-selector": "^5.1",
+        "symfony/phpunit-bridge": "^5.1"
     },
     "config": {
         "optimize-autoloader": true,
@@ -36,7 +36,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "App\\Tests\\": "tests/",
+            "App\\FunctionalTests\\": "tests/functional"
         }
     },
     "replace": {

@@ -4,7 +4,7 @@ namespace App\Service;
 use App\ProcessNumber;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class TjmsFirstStepCrawler extends JusticeProcessCrawler
+class TjmsFirstStepCrawler extends TjmsCrawler
 {
     public function __construct(HttpClientInterface $httpClient)
     {
@@ -17,15 +17,14 @@ class TjmsFirstStepCrawler extends JusticeProcessCrawler
 
         return $this->prepareResponse(
             [
+                'uuidCaptcha'                            => '',
                 'conversationId'                         => '',
                 'cbPesquisa'                             => 'NUMPROC',
-                'dadosConsulta.localPesquisa.cdLocal'    => '1',
-                'dadosConsulta.tipoNuProcesso'           => 'UNIFICADO',
                 'dadosConsulta.valorConsulta'            => '',
+                'dadosConsulta.tipoNuProcesso'           => 'UNIFICADO',
                 'dadosConsulta.valorConsultaNuUnificado' => $processNumber,
                 'numeroDigitoAnoUnificado'               => $processNumberParts[1],
                 'foroNumeroUnificado'                    => $processNumberParts[3],
-                'uuidCaptcha'                            => '',
             ]
         );
     }

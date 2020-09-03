@@ -1,7 +1,0 @@
-actor: ApiTester
-modules:
-    enabled:
-        - \App\Tests\Helper\Api
-        - REST:
-            url: http://192.168.0.106
-            depends: PhpBrowser
